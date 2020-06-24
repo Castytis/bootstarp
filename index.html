@@ -45,7 +45,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="close-login" >&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                            <button id="cancel-login" type="button" class="btn btn-secondary btn-sm ml-auto" >Cancel</button>
                             <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                         </div>
                     </form>
@@ -82,7 +82,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-title" id="exampleModalLabel">Reserve a Table</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close"  aria-label="Close" id="close-reserve">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -139,8 +139,8 @@
             </div>
             <div class="form-group row">
                 <div class="offset-md-2 col-md-10">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Reserve</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-reserve">Cancel</button>
+                    <button type="submit" class="btn btn-primary" >Reserve</button>
                 </div>
             </div>
             </form>
@@ -336,8 +336,31 @@
                 $('#carouselButton').children('span').removeClass('fa-play');
                 $('#carouselButton').children('span').addClass('fa-pause');
              }
-             
          });
+        
+         $("#reserve").click(function(){
+                $("#reserveTable").modal('show');
+            });
+            $("#login").click(function(){
+                $("#loginModal").modal('show');
+            });       
+
+            $("#close-login").click(function(){
+                $("#loginModal").modal("hide");
+                
+            });
+            $("#close-reserve").click(function(){
+                $("#reserveTable").modal("hide");
+                
+            });
+            $("#cancel-reserve").click(function(){
+                $("#reserveTable").modal("hide");
+                
+            });
+            $("#cancel-login").click(function(){
+                $("#loginModal").modal("hide");
+                
+            });
      });
  </script>
 </body>
